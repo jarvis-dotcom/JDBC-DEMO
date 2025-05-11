@@ -1,0 +1,4 @@
+employee:
+  insert: insert into employee (id,name) values (?,?);
+  findAll: select * from employee;
+  deleteAll: delete from employee;
