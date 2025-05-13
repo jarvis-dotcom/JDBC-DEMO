@@ -25,6 +25,9 @@ public class EmployeeRepo {
 
     public int save(Employee employee) {
         String insertQuery = queryConfig.getInsert();
+        if (existsById(employee.getId())){
+            throw new RuntimeException("Employee with ID " + employee.getId() + " already exists.");
+        }
         return jdbcTemplate.update(insertQuery, employee.getId(), employee.getName());
     }
 
@@ -47,6 +50,14 @@ public class EmployeeRepo {
                 return emp;
             }
         };
+    }
+    public boolean existsById(int id) {
+        String findById = queryConfig.getFindById();
+            List<Integer> result = jdbcTemplate.query(findById, ps -> ps.setInt(1, id),
+                    (rs, rowNum) -> rs.getInt(1)
+            );
+            return !result.isEmpty();
+
     }
 
 

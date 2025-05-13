@@ -2,6 +2,7 @@ package com.demo.SpringBootJDBC.controller;
 
 import com.demo.SpringBootJDBC.model.Employee;
 import com.demo.SpringBootJDBC.service.EmployeeService;
+import lombok.SneakyThrows;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
