@@ -11,4 +11,5 @@ public class QueryConfig {
     String insert;
     String findAll;
     String deleteAll;
+    String findById;
 }

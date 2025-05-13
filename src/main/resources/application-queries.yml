@@ -1,4 +1,5 @@
 employee:
+  findById: select * from employee where id=?;
   insert: insert into employee (id,name) values (?,?);
   findAll: select * from employee;
   deleteAll: delete from employee;
